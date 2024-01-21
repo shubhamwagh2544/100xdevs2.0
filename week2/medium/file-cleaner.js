@@ -17,7 +17,8 @@ function cleanFile() {
             return;
         }
         let content = data;
-        content = content.split(' ').filter(word => word != "").join(' ');
+        content = content.split(' ').filter(word => word != "").join(' ');  // split by space, filter out empty strings, join by space
+
         fs.writeFile('week2/medium/info.txt', content, function (err) {
             if (err) {
                 console.error(err);
