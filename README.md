@@ -19,4 +19,14 @@
   - read-from-file (fs module)
   - write-to-file (fs module)
   - file-cleaner
-  - 
+  - clock2
+  - promise-all
+  - promise-chaining
+  - promisified-setTimeout
+  - blocking JS Thread manually (sleep-completely)
+  - fileServer 
+  - todoServer
+
+- week3
+  - middlewares
+  - global catches
