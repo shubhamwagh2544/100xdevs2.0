@@ -3,10 +3,13 @@ const zod = require('zod');
 const app = express();
 app.use(express.json());
 
-const schema = zod.object({             // checks if input is an object that contains email, password and country
+// checks if input is an object that contains email, password and country
+const schema = zod.object({
     email: zod.string().email(),
     password: zod.string().min(10).max(100),
-    country: zod.literal("US").or(zod.literal("IN"))
+    country: zod.literal("US").or(zod.literal("IN")),
+    // if input contains array of strings with at least one input
+    arr: zod.array(zod.string()).min(1)
 })
 
 app.post('/register', (req, res) => {
