@@ -10,22 +10,27 @@
 <body>
     <script>
         // promise
-        function fetchData() {
+        /*function fetchData() {
             fetch('https://fakerapi.it/api/v1/persons')
                 .then(function (response) {
                     response.json().then(function (res) {
                         console.log(res.data.map((obj) => console.log(obj.firstname)))
                     })
                 })
-        }
+        }*/
 
         // async await
         async function fetchData() {
             const response = await fetch('https://fakerapi.it/api/v1/persons')
             const finalData = await response.json()
             console.log(finalData.data.map((obj) => console.log(obj.firstname)))
+            //render to html
+            document.getElementById('container').innerHTML = finalData.data.map((obj) => `<h3>${obj.firstname}</h3>`)
         }
     </script>
+    <div id="container">
+
+    </div>
     <button onclick="fetchData()"> Fetch Data </button>
 </body>
 

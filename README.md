@@ -14,6 +14,7 @@
   - todo-list
 
 - week 2
+  - async await
   - counter-variation (setInterval)
   - counter-variation (setTimeOut)
   - read-from-file (fs module)
@@ -29,4 +30,5 @@
 
 - week3
   - middlewares
+  - input-validation (zod)
   - global catches
