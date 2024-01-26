@@ -21,10 +21,12 @@ const User = mongoose.model('Users', {
 
 // signin
 app.post('/signin', async (req, res) => {
-    const user = req.body;
+    const username = req.body.username;
+    const password = req.body.password;
+    const name = req.body.name;
 
     // check if user already exists
-    const existingUser = await User.findOne({ username: user.username })
+    const existingUser = await User.findOne({ username });
 
     if (existingUser) {
         res.status(400).json({
@@ -33,18 +35,19 @@ app.post('/signin', async (req, res) => {
     }
 
     // save to db
+    /*
     const newUser = new User({
-        username: user.username,
-        password: user.password,
-        name: user.name
+        username,
+        password,
+        name
     });
     newUser.save();
+    */
+
+    await User.create({ username, password, name });
 
     // jwt token
-    const token = jwt.sign({
-        username: newUser.username,
-        name: newUser.name
-    }, jwtPass)
+    const token = jwt.sign({ username, name }, jwtPass)
 
     res.status(200).json({
         msg: 'User registered successfully',
