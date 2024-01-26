@@ -32,3 +32,5 @@
   - middlewares
   - input-validation (zod)
   - global catches
+  - authentication-with-in-memory-db
+  - authentication-with-mongodb
