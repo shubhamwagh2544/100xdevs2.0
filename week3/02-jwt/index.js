@@ -14,16 +14,27 @@ const jwtPassword = 'secret';
  *                        the password does not meet the length requirement.
  */
 
+/*
 const schema = zod.object({
     username: zod.string().email(),
     password: zod.string().min(6)
 });
+*/
+
+const usernameSchema = zod.string().email();
+const passwordSchema = zod.string().min(6);
 
 function validCredentials(username, password) {
+    /*
     const response = schema.safeParse({ username: username, password: password });
-
     if (response.success) return true;
-    else return null;
+    else return false;
+    */
+    const usernameResponse = usernameSchema.safeParse(username);
+    const passwordResponse = passwordSchema.safeParse(password);
+
+    if (!usernameResponse.success || !passwordResponse.success) return false;
+    else return true;
 }
 
 function signJwt(username, password) {
