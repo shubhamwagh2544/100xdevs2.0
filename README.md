@@ -47,3 +47,7 @@
   - DOM-calculate-sum-frontend-backend
   - DOM-calculate-sum-debouncer-for-backend
   - DOM-calculate-interest
+  - DOM-todo
+  - DOM-todo-managing-global-state
+  - DOM-todo-full-crud-with-global-state
+  - simple-react-app (counter)
