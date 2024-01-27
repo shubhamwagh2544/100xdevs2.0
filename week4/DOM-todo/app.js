@@ -1,4 +1,6 @@
-/*function addTodo1() {
+/*
+//bad code
+function addTodo1() {
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
     const container = document.getElementById('todos');
