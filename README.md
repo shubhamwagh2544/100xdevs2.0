@@ -1,5 +1,8 @@
 # 100xdevs
 
+- warmup
+  - simple zerodha frontend (html+css)
+
 - week 1
   - counter
   - setTimeout-is-fraud
@@ -32,5 +35,10 @@
   - middlewares
   - input-validation (zod)
   - global catches
+  - jsonwebtoken
   - authentication-with-in-memory-db
   - authentication-with-mongodb
+  - requestCount
+  - rateLimiter
+  - errorCount
+  - jwt-sign/verify/decode
