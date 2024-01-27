@@ -42,3 +42,8 @@
   - rateLimiter
   - errorCount
   - jwt-sign/verify/decode
+
+- week4
+  - DOM-calculate-sum-frontend-backend
+  - DOM-calculate-sum-debouncer-for-backend
+  - DOM-calculate-interest
