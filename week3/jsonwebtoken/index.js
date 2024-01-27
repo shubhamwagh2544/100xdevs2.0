@@ -19,7 +19,7 @@ function signJwt(user) {
     const password = user.password;
 
     if (validCredentials(username, password)) {
-        const token = jwt.sign({ username: username, password: password }, jwtPassword);
+        const token = jwt.sign({ username: username, password: password }, jwtPassword);    // sign(payload, secret)
         console.log(token);
         return { user, token };
     }
@@ -29,9 +29,10 @@ function signJwt(user) {
     }
 }
 
+// if secret is changed, jwt will be rejected saying invalid signature
 function verifyJwt(token, user) {
-    const decode = jwt.verify(token, jwtPassword);
-    console.log(decode);
+    const verified = jwt.verify(token, jwtPassword);      // verify(token, secret)
+    console.log(verified);
     /*
         {
             username: 'shubhamwagh@gmail.com',
@@ -39,7 +40,7 @@ function verifyJwt(token, user) {
             iat: 1706294182
         }
     */
-    if (decode.username === user.username && decode.password === user.password) {
+    if (verified.username === user.username && verified.password === user.password) {
         console.log('token verified successfully..')
     }
     else {
@@ -47,6 +48,18 @@ function verifyJwt(token, user) {
     }
 }
 
+// anybody can decode jwt but only server can verify its authenticity with secret key
+function decodeJwt(token) {
+    const decoded = jwt.decode(token);      // decode(token)
+    console.log(decoded);
+    /*
+        {
+            username: 'shubhamwagh@gmail.com',
+            password: 'shubhamwa',
+            iat: 1706294182
+        }
+    */
+}
 
 
 const { user, token } = signJwt({
@@ -54,5 +67,7 @@ const { user, token } = signJwt({
     password: 'shubhamwa'
 });
 console.log(token);
+
+decodeJwt(token);
 
 verifyJwt(token, user);
