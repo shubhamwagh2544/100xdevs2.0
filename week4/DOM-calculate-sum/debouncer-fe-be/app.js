@@ -17,8 +17,6 @@
 
 let timeout;
 function debouncedCalculateSum2() {
-    // delay the call to calculateSum2() until its not been called for 100ms
-
     // cancel the old clock
     clearTimeout(timeout);
 
@@ -26,6 +24,10 @@ function debouncedCalculateSum2() {
     timeout = setTimeout(() => {
         calculateSum2()
     }, 1000)
+
+    // canceling old clock and starting new :=> debounces the api calls
+    // if only setTimeout is used, then calls would be delayed but not debounced
+    // clearTimeout clears clock time and setTimeout agains starts new one
 }
 
 async function calculateSum2() {
