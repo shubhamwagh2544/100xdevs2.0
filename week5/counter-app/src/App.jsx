@@ -1,17 +1,19 @@
 import { useState } from "react"
 
 function App() {
+  // state
   const [count, setCount] = useState(0);
 
-  function onclickHandler() {
-    setCount(count + 1);
-  }
-
   return (
-    <div>
-      <button onClick={onclickHandler}>Counter {count}</button>
-    </div>
+    <CustomButton count={count} setCount={setCount}></CustomButton>
   )
+}
+
+function CustomButton(props) {
+  function onClickHandler() {
+    props.setCount(props.count + 1);
+  }
+  return <button onClick={onClickHandler}>Counter {props.count}</button>
 }
 
 export default App
