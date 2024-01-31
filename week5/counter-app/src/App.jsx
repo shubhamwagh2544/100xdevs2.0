@@ -9,6 +9,7 @@ function App() {
   )
 }
 
+//component
 function CustomButton(props) {
   function onClickHandler() {
     props.setCount(props.count + 1);
@@ -16,4 +17,4 @@ function CustomButton(props) {
   return <button onClick={onClickHandler}>Counter {props.count}</button>
 }
 
-export default App
+export default App;
