@@ -56,4 +56,5 @@
   - counter-app-with-mern
 
 - week 6
-  - 
+- experiments[how to prevent rerendering]
+- keys-in-react
