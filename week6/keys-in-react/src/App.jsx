@@ -1,37 +1,34 @@
 import { useState } from 'react'
 
+let counter = 3;
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: 'hey',
-      description: 'hey there'
-    },
-    {
-      id: 2,
-      title: 'hey 2',
-      description: 'hey there 2'
-    },
-    {
-      id: 3,
-      title: 'hey 3',
-      description: 'hey there 3'
-    }
-  ]);
+  const [todos, setTodos] = useState([{
+    id: 1,
+    title: 'hey',
+    description: 'hey there'
+  }, {
+    id: 2,
+    title: 'hey 2',
+    description: 'hey there 2'
+  }, {
+    id: 3,
+    title: 'hey 3',
+    description: 'hey there 3'
+  }]);
 
   function addTodo() {
     setTodos([...todos, {
-      id: 4,
-      title: 'hey 4',
-      description: 'hey there 4'
+      id: ++counter,
+      title: `hey ${counter}`,
+      description: `hey there ${counter}`
     }])
   }
 
   return (
     <>
-      <button onClick={addTodo}>add todo</button>
-      {todos.map((todo) => <Todo title={todo.title} description={todo.description} />)}
+      <button onClick={addTodo}>Add Todo</button>
+      {todos.map((todo) => <Todo key={todo.id} title={todo.title} description={todo.description} />)}
     </>
   )
 }
