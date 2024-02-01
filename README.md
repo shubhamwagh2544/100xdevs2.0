@@ -51,3 +51,9 @@
   - DOM-todo-managing-global-state
   - DOM-todo-full-crud-with-global-state
   - simple-react-app (counter)
+
+- week 5
+  - counter-app-with-mern
+
+- week 6
+  - 
