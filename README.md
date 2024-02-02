@@ -58,3 +58,4 @@
 - week 6
   - experiments[how to prevent rerendering]
   - keys-in-react
+  - hooks-in-react [useEffect]
