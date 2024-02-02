@@ -1,3 +1,5 @@
+import { UseCallback } from "./hooks/useCallback/UseCallback"
+import { UseCallback2 } from "./hooks/useCallback/UseCallback2"
 import { UseEffect } from "./hooks/useEffect/UseEffect"
 import { UseEffect2 } from "./hooks/useEffect/UseEffect2"
 import { UseEffectVariation } from "./hooks/useEffect/UseEffectVariation"
@@ -19,7 +21,9 @@ function App() {
       {/* <UseEffectVariation4 /> */}
       {/* <UseMemo /> */}
       {/* <UseMemo2 /> */}
-      <UseMemo3 />
+      {/* <UseMemo3 /> */}
+      {/* <UseCallback /> */}
+      <UseCallback2 />
     </>
   )
 }
