@@ -26,3 +26,5 @@ const Child = React.memo(({ inputFunction }) => {   // memo will prevent rerende
         </div>
     )
 })
+
+// useCallback is about not rendering a child component, if function hasnt/doesnt need to change across renders
