@@ -9,6 +9,7 @@ import { UseEffectVariation4 } from "./hooks/useEffect/UseEffectVariation4"
 import { UseMemo } from "./hooks/useMemo/UseMemo"
 import { UseMemo2 } from "./hooks/useMemo/UseMemo2"
 import { UseMemo3 } from "./hooks/useMemo/UseMemo3"
+import { UseRef } from "./hooks/useRef/UseRef"
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       {/* <UseMemo2 /> */}
       {/* <UseMemo3 /> */}
       {/* <UseCallback /> */}
-      <UseCallback2 />
+      {/* <UseCallback2 /> */}
+      <UseRef />
     </>
   )
 }
