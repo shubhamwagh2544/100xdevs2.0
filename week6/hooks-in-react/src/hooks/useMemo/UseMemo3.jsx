@@ -6,7 +6,7 @@ export function UseMemo3() {
     const [counter, increaseCounter] = useState(0);
     const [initialValue, setInitialValue] = useState(0);
 
-    let finalSum = useMemo(() => {
+    let finalSum = useMemo(() => {          // useMemo helps in getting new derived state from existing state
         console.log('memo called')
         let sum = 0;
         for (let i = 1; i <= initialValue; i++) {
