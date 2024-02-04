@@ -57,5 +57,15 @@
 
 - week 6
   - experiments[how to prevent rerendering]
+  - wrapper-components-in-react
   - keys-in-react
-  - hooks-in-react [useEffect]
+  - hooks-in-react [useState-hook] 
+  - useEffect-hook
+  - useMemo-hook
+  - useCallback-hook
+  - useRef-hook
+
+- week 7
+  - react-router-dom [routing-in-react]
+  - prop-drilling
+  - context-api
