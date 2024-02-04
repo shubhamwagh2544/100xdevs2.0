@@ -69,3 +69,5 @@
   - react-router-dom [routing-in-react]
   - prop-drilling
   - context-api
+  - state-management-without-recoil
+  - state-management-with-recoil
