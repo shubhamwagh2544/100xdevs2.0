@@ -7,6 +7,11 @@ import { useContext } from "react";
 
 // why Context API : its more of syntactical sugar over prop drilling [on other hand, recoil redux are optimised libraries for performant state management of react app]
 
+// context api solves
+// 1. solves prop drilling
+// 2. it does not avoid app rerenders
+// 3. its just makes syntax cleaner
+
 function Solution() {
     const [count, setCount] = useState(0);
 
