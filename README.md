@@ -72,3 +72,4 @@
   - state-management-without-recoil
   - state-management-with-recoil
   - recoil-for-linkedin-topbar-app
+  - recoil-for-todo-app-easy-bits
