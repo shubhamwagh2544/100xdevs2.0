@@ -1,5 +1,6 @@
 import { atom } from 'recoil'
 
+// atom represents a piece of state
 const networkAtom = atom({
     key: 'networkAtom',
     default: 104
