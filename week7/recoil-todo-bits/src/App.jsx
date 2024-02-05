@@ -1,4 +1,4 @@
-import { RecoilRoot, useRecoilValue, useSetRecoilState } from 'recoil'
+import { RecoilRoot, useRecoilValue, useSetRecoilState, useRecoilState } from 'recoil'
 import { todosAtomFamily } from './store/atoms/atoms'
 import { useEffect } from 'react'
 
@@ -22,6 +22,7 @@ function App() {
 function Todo({ id }) {
   // todo needs to be fetched via an atom
   const currentTodo = useRecoilValue(todosAtomFamily(id))
+  // const [currentTodo, setTodos] = useRecoilState(todosAtomFamily(id))
   return (
     <>
       <p>{currentTodo.title}</p>
