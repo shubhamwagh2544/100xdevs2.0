@@ -1,11 +1,14 @@
 import { RecoilRoot, useRecoilValue, useSetRecoilState, useRecoilState, useRecoilValueLoadable } from 'recoil'
 import { todosAtomFamily } from './store/atoms/atoms'
 import { useEffect } from 'react'
+import { Suspense } from 'react'
+import { SuspenseFallback } from './fallbacks/suspense/SuspenseFallback'
 
 function App() {
   return (
     <RecoilRoot>
-      <UpdaterComponent />
+      {/* we can also use Suspense API for displaying fallback till children are loading */}
+      {/* <SuspenseFallback /> */}
       <Todo id={1} />
       <Todo id={2} />
       <Todo id={3} />
@@ -21,13 +24,13 @@ function App() {
 
 function Todo({ id }) {
   // todo needs to be fetched via an atom
-  // const currentTodo = useRecoilValue(todosAtomFamily(id))
+  //const currentTodo = useRecoilValue(todosAtomFamily(id))
   // const [currentTodo, setTodos] = useRecoilState(todosAtomFamily(id))
 
   // useRecoilValueLoadable or useRecoilStateLoadable : renders loading message for users if backend doenst fetch data fast
   const currentTodo = useRecoilValueLoadable(todosAtomFamily(id))
   // currentTodo is object with state and content props
-  console.log(currentTodo.state + " --- " + currentTodo.contents)
+  //console.log(currentTodo.state + " --- " + currentTodo.contents)
 
   if (currentTodo.state === 'loading') {        // if backend taking time to fetch data
     return <div>
@@ -37,8 +40,8 @@ function Todo({ id }) {
   else if (currentTodo.state === 'hasValue') {  // if all goes well
     return (
       <>
-        <p>{currentTodo.title}</p>
-        <p>{currentTodo.description}</p>
+        <p>{currentTodo.contents.title}</p>
+        <p>{currentTodo.contents.description}</p>
         <br />
       </>
     )
@@ -50,7 +53,7 @@ function Todo({ id }) {
   }
 }
 
-function UpdaterComponent() {
+export function UpdaterComponent() {
   const updateTodo = useSetRecoilState(todosAtomFamily(2))
 
   useEffect(() => {
@@ -60,7 +63,7 @@ function UpdaterComponent() {
         title: 'todo 2 updated',
         description: 'todo 2 updated with useSetRecoilState'
       })
-    }, 5000)
+    }, 10000)
   }, [])
 }
 
