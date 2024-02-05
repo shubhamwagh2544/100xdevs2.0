@@ -27,6 +27,10 @@ export const todosAtomFamily = atomFamily({
         key: 'todosSelectorFamily',
         get: function (id) {
             return async function ({ get }) {
+                // what if backend call takes some time to fetch data [screen will be blank : not so good]
+                // manual sleeping backend call for 5 sec
+                await new Promise(r => setTimeout(r, 5000))
+
                 const res = await axios.get(`https://sum-server.100xdevs.com/todo?id=${id}`)
                 return res.data.todo
             }

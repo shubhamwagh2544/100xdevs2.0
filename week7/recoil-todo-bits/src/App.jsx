@@ -1,4 +1,4 @@
-import { RecoilRoot, useRecoilValue, useSetRecoilState, useRecoilState } from 'recoil'
+import { RecoilRoot, useRecoilValue, useSetRecoilState, useRecoilState, useRecoilValueLoadable } from 'recoil'
 import { todosAtomFamily } from './store/atoms/atoms'
 import { useEffect } from 'react'
 
@@ -21,15 +21,33 @@ function App() {
 
 function Todo({ id }) {
   // todo needs to be fetched via an atom
-  const currentTodo = useRecoilValue(todosAtomFamily(id))
+  // const currentTodo = useRecoilValue(todosAtomFamily(id))
   // const [currentTodo, setTodos] = useRecoilState(todosAtomFamily(id))
-  return (
-    <>
-      <p>{currentTodo.title}</p>
-      <p>{currentTodo.description}</p>
-      <br />
-    </>
-  )
+
+  // useRecoilValueLoadable or useRecoilStateLoadable : renders loading message for users if backend doenst fetch data fast
+  const currentTodo = useRecoilValueLoadable(todosAtomFamily(id))
+  // currentTodo is object with state and content props
+  console.log(currentTodo.state + " --- " + currentTodo.contents)
+
+  if (currentTodo.state === 'loading') {        // if backend taking time to fetch data
+    return <div>
+      loading...
+    </div>
+  }
+  else if (currentTodo.state === 'hasValue') {  // if all goes well
+    return (
+      <>
+        <p>{currentTodo.title}</p>
+        <p>{currentTodo.description}</p>
+        <br />
+      </>
+    )
+  }
+  else if (currentTodo.state === 'hasError') {  // if backend url is incorrect => error
+    return <div>
+      error while rendering components....
+    </div>
+  }
 }
 
 function UpdaterComponent() {
