@@ -1,10 +1,13 @@
 // function that takes another function as input and runs it after 1 sec
 
-function callAnotheFn(fn: () => void) {         // type of function
+function callAnotheFn(fn: () => void): number {         // type of function
     setTimeout(fn, 1000)
+    return 1
 }
 
-callAnotheFn(() => console.log('hey'))
+console.log(
+    callAnotheFn(() => console.log('hey'))
+)
 
 // function that takes user as input and returns true or false bsaed on age
 //way 1
