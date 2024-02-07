@@ -33,3 +33,35 @@ console.log(Shubham.email)
 console.log(Shubham.age)
 
 Shubham.greet('shubham wagh')
+
+// 2
+interface A {
+    name: string | number
+}
+
+function calA(user: A) {
+    console.log(user.name)
+}
+
+
+calA({ name: 'shubham' })
+calA({ name: 25 })
+
+// 3
+interface X {
+    name: string | number
+}
+
+interface Z extends X {
+    number: number
+}
+
+function say(input: Z) {
+    console.log(input.name)
+    console.log(input.number)
+}
+
+say({
+    name: 'shubham',
+    number: 123
+})
