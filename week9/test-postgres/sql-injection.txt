@@ -1,0 +1,23 @@
+SQL injection is a type of security vulnerability that occurs when an attacker is able to inject malicious SQL code into a SQL query via input data from the application. 
+
+This can happen when user input is not properly validated or sanitized before being used in a SQL query.
+
+results: unauthorized access to sensitive data, modification of database records, or even complete compromise of the database server.
+
+To prevent SQL injection attacks, it's important to use parameterized queries, which allow the database engine to distinguish between SQL code and data values so that it can perform input validation
+
+
+#1
+
+valid sql : SELECT * FROM users WHERE username = 'input_username' AND password = 'input_password';
+malicious sql: SELECT * FROM users WHERE username = '' OR '1'='1' AND password = 'input_password';
+
+In this modified query, '1'='1' always evaluates to true, effectively bypassing the password check. As a result, the query returns all rows from the users table, effectively allowing the attacker to log in without knowing a valid password.
+
+#2
+
+valid sql : INSERT INTO db (username, password) VALUES ('username', 'password');
+malicious sql : INSERT INTO db (username, password) VALUES ('username', ;DELETE * FROM users);
+
+Here, the password field appears to be vulnerable to injection.
+If the application blindly concatenates user input into SQL queries without proper validation or sanitization, an attacker could exploit this vulnerability to execute a malicious SQL command to delete all records from the users table.
