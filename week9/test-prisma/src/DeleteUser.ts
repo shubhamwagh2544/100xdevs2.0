@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { findSourceMap } from "module";
 const prisma = new PrismaClient()
 
 async function deleteUser(email: string) {
