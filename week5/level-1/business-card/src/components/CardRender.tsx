@@ -79,7 +79,13 @@ export function CardRender() {
                         required
                     />
                 </div>
-                <button type="submit" style={styles.button}>Submit</button>
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                    <button type="submit" style={styles.button}>Submit</button>
+                </div>
             </form>
 
             <div style={{
@@ -126,7 +132,7 @@ const styles = {
         border: '1px solid #ccc',
     },
     button: {
-        width: '100%',
+        width: '50%',
         padding: '15px',
         fontSize: '16px',
         borderRadius: '4px',
@@ -134,7 +140,8 @@ const styles = {
         color: '#fff',
         border: 'none',
         cursor: 'pointer',
-        marginTop: '10px',
-        marginLeft: '10px'
+        marginTop: '15px',
+        marginLeft: '15px',
+        marginBottom: '30px'
     },
 };
