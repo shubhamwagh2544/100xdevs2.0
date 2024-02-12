@@ -75,7 +75,8 @@
   - recoil-for-todo-app-easy-bits
 
 - week 8
-  - tailwind-css
+  - tailwind-css [simple-payment-card]
+  - tailwind-disney-clone
 
 - week 9
   - typescript 
