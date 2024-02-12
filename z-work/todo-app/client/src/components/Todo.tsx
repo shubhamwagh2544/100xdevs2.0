@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useState } from "react"
 
 export function Todo() {
@@ -10,11 +11,16 @@ export function Todo() {
         setTodo(val)
     }
 
-    const addTodo = () => {
+    const addTodo = async () => {
+        // render
         if (todo.trim() !== "") {
             setTodos([...todos, todo])
             setTodo("")
         }
+
+        //send to server
+        const res = await axios.post('http://localhost:3000/', { todo })
+        console.log(res.data)
     }
 
     return (
@@ -44,7 +50,7 @@ export function Todo() {
             <div className="flex flex-col gap-1 mt-10 justify-center items-center">
                 {todos.map((item: string, index: number) => (
                     <div
-                        className="border-2 border-gray-300 p-3 rounded-md m-1 w-[35%] text-center"
+                        className="border-2 border-gray-300 p-3 rounded-md m-1 w-[35%] text-center text-white text-lg"
                         key={index}
                     >
                         {item}
