@@ -73,3 +73,16 @@
   - state-management-with-recoil
   - recoil-for-linkedin-topbar-app
   - recoil-for-todo-app-easy-bits
+
+- week 8
+  - tailwind-css
+
+- week 9
+  - typescript 
+  - todo bits in typescript
+  - postgres with pg client
+  - postgres with prisma client
+
+- week 10
+  - serverless backends [cloudfare: deploy]
+  - hono-library [cloudfare-worker-app]
