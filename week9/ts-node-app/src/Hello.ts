@@ -24,3 +24,13 @@ function getHero2(): string {
     return "hero"
 }
 hero2 = getHero2()
+
+let userID2 = 23.264
+console.log(userID2.toFixed(1))     // 23.3
+console.log(userID2.toFixed(2))     // 23.26
+console.log(userID2.toPrecision(3)) // 23.3
+console.log(userID2.toPrecision(4)) // 23.26
+
+console.log(userID2.toString())     // 23.264
+console.log(typeof userID2)         // number
+console.log(typeof userID2.toString()) // string
