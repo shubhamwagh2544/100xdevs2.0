@@ -46,3 +46,25 @@ function getNumberOrString(val: number): number | string {
 }
 console.log(getNumberOrString(20)) // 20
 console.log(getNumberOrString(2)) // 200 OK
+
+
+// 8
+function fail(errorMessage: string): never {    // never stands for function that never returns anything
+    throw new Error(errorMessage)               // suitable for throwing errors, infinite loops etc
+}
+fail('something went wrong!')
+
+
+// 9
+function getUnknownType(val: unknown): void {   // unknown stands for type not known at compile time
+    if (typeof val === 'string') {
+        console.log(val.toUpperCase())
+    }
+    else {
+        console.log('value is not a string')
+    }
+}
+let val: unknown = 'hello'
+getUnknownType(val) // HELLO
+val = 10
+getUnknownType(val) // value is not a string

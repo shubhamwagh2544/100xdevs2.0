@@ -29,3 +29,18 @@ function getNumberOrString(val) {
 }
 console.log(getNumberOrString(20));
 console.log(getNumberOrString(2));
+function fail(errorMessage) {
+    throw new Error(errorMessage);
+}
+function getUnknownType(val) {
+    if (typeof val === 'string') {
+        console.log(val.toUpperCase());
+    }
+    else {
+        console.log('value is not a string');
+    }
+}
+let val = 'hello';
+getUnknownType(val);
+val = 10;
+getUnknownType(val);
