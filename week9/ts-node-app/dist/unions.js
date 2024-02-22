@@ -12,5 +12,5 @@ function getDatabaseId(id) {
         return id = id + 2;
     }
 }
-console.log(getDatabaseId(1));
 console.log(getDatabaseId('1'));
+console.log(getDatabaseId(1));
