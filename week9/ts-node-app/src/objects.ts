@@ -49,3 +49,44 @@ function signUpUser3(user: Userr): Userr {
 console.log(
     signUpUser3(user)
 )
+
+
+// readonly and optional
+type Userrr = {
+    readonly _id: number,
+    name: string,
+    age: number,
+    address?: string
+}
+const userr = {
+    _id: 1,
+    name: 'shubham wagh',
+    age: 25
+}
+function signUpUser4(userr: Userrr): Userrr {
+    //userr._id = 123       // error: Cannot assign to '_id' because it is a read-only property.
+    return {
+        ...userr,
+        address: 'pune'
+    }
+}
+console.log(
+    signUpUser4(userr)
+)
+
+
+// combining types
+type CreditCardNumber = {
+    cardnumber: string
+}
+type CreditCardHolder = {
+    cardholder: string
+}
+type CreditCard = CreditCardNumber & CreditCardHolder & {
+    readonly cvv: number
+}
+const creditCard: CreditCard = {
+    cardnumber: '1234567890123456',
+    cardholder: 'shubham wagh',
+    cvv: 123
+}
