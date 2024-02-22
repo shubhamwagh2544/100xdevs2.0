@@ -52,7 +52,7 @@ console.log(getNumberOrString(2)) // 200 OK
 function fail(errorMessage: string): never {    // never stands for function that never returns anything
     throw new Error(errorMessage)               // suitable for throwing errors, infinite loops etc
 }
-fail('something went wrong!')
+//fail('something went wrong!')
 
 
 // 9
