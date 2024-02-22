@@ -28,3 +28,18 @@ say({
     name: 'shubham',
     number: 123
 });
+const usser = {
+    _id: 1,
+    name: 'shubham',
+    age: 25,
+    email: 'test@gmail.com',
+    startTrial(msg) {
+        return `start trial ${msg}`;
+    },
+    endTrial(index, someElse) {
+        return { index, someElse };
+    },
+};
+let start = usser.startTrial('hello');
+let end = usser.endTrial(1, true);
+console.log(start, " :::::::::\n ", end);

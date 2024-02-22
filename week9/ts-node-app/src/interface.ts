@@ -65,3 +65,44 @@ say({
     name: 'shubham',
     number: 123
 })
+
+// 3
+interface Uuser {
+    readonly name: string,
+    age: number,
+    email?: string
+
+    startTrial: (input: string) => string,
+    endTrial: (id: number, live: boolean) => object
+}
+
+// can redeclare to add more properties => reopening of interface for extension
+interface Uuser {
+    readonly _id: number
+}
+
+const usser: Uuser = {
+    _id: 1,
+    name: 'shubham',
+    age: 25,
+    email: 'test@gmail.com',
+
+    startTrial(msg: string): string {
+        return `start trial ${msg}`
+    },
+
+    endTrial(index: number, someElse: boolean): object {
+        return { index, someElse }
+    },
+}
+
+let start = usser.startTrial('hello')
+let end = usser.endTrial(1, true)
+console.log(start, " :::::::::\n ", end);
+
+
+// extension
+interface Uusser extends Uuser {
+    address?: string,
+    phone?: number
+}
