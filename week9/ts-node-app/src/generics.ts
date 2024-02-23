@@ -47,3 +47,62 @@ console.log(firstelement.toUpperCase())
 
 let firstnumber = firstElement<number>([1.111111, 2.22222])
 console.log(firstnumber.toFixed(2))
+
+
+// generics + arrow functions
+const firstElementArrow = <T>(arr: T[]): T => {
+    return arr[0]
+}
+console.log(firstElementArrow<string>(['shubham', 'helo']))
+console.log(firstElementArrow<number>([1.111111, 2.22222]))
+
+
+interface Database {
+    connection: string
+    username: string
+    password: string
+}
+
+const getDatabaseAccess = <T, U extends Database>(valOne: T, valTwo: U): object => {
+    return {
+        valOne,
+        valTwo
+    }
+}
+interface Extra extends Database {
+    extra: string
+}
+
+console.log(
+    getDatabaseAccess<string, Extra>(
+        'shubham',
+        { connection: 'localhost', username: 'shubham', password: 'shubham', extra: 'extra' }
+    )
+)
+
+
+// generics classes
+class Cart<T> {
+    public cart: T[] = []
+
+    addToCart(product: T): void {
+        this.cart.push(product)
+    }
+
+    // getter
+    get getCart(): T[] {
+        return this.cart
+    }
+}
+
+const cart = new Cart<string>()
+cart.addToCart('shubham')
+cart.addToCart('wagh')
+
+console.log(cart.getCart)           // calling getter: [ 'shubham', 'wagh' ]
+
+const cart2 = new Cart<number>()
+cart2.addToCart(1111)
+cart2.addToCart(2222)
+
+console.log(cart2.getCart)           // calling getter: [ 1111, 2222 ]
