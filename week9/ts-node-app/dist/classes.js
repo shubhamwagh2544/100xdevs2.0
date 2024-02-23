@@ -38,6 +38,7 @@ class Personn3 {
     constructor() {
         this._name = 'shubham';
         this.protectedProperty = 'protected property';
+        this.publicProperty = 'public property';
         this.deleteToken();
     }
     callMePublic() {
@@ -65,6 +66,7 @@ class Personn4 extends Personn3 {
         this.callMePublic();
         Personn3.callMeStatic();
         this.protectedProperty = 'new protected property';
+        this.publicProperty = 'new public property';
     }
 }
 const person4 = new Personn4();
