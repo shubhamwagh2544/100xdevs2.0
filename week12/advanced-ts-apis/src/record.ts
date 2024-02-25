@@ -37,3 +37,7 @@ const userRecord: UserRecord = {
         password: "test"
     }
 }
+
+// both record and map have same functionality but map is better to use
+
+export { }
