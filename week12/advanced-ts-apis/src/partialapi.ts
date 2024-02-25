@@ -44,3 +44,5 @@ function updateUserWithPick(user: UserUpdate) { }
 // updateUserWithPick({ age: 30 })
 // Error: Property 'name' 'age' is missing in type '{ age: number; }' but required in type 'UserUpdate'.
 // updateUserWithPick({ email: 'test@gmail.com' })
+
+export { }
