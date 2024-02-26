@@ -4,4 +4,4 @@ function change() {
     let newArr = [...arr, 6, 7, 8, 9, 10];
     return newArr;
 }
-console.log(change(), '": length: ', change().length);
+console.log(change());
