@@ -22,3 +22,6 @@ exports.SigninInputSchema = zod_1.default.object({
 // what are declaration files? : .d.ts files
 // they are used to provide types for javascript files so that typescript can understand them
 // put "declaration": true in tsconfig.json to generate declaration files
+// function implementations are not exported in declaration files by default
+// only function signatures are exported
+// types and interfaces are exported as is by default
