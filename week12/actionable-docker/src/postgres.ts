@@ -26,3 +26,4 @@ testConnection()
 
 // docker run -e POSTGRES_USER=shubhamwagh -e POSTGRES_PASSWORD=shubhamwagh -e POSTGRES_DB=testdocker -p 5434:5432 -d postgres
 // docker exec -it a4599b50353a psql -U shubhamwagh -d testdocker
+// docker exec -it a4599b50353a /bin/bash
