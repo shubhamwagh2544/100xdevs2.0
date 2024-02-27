@@ -1,0 +1,7 @@
+When you map a port on the host machine to a port in a Docker container, you're essentially telling Docker to forward any traffic that arrives at the specified port on the host to the corresponding port in the container.
+
+In your case, you initially mapped port 5432 on the host to port 5432 in the Docker container. This means that any traffic directed to port 5432 on your host machine would be forwarded to port 5432 in the Docker container.
+
+However, if another service or process on your host machine was already using port 5432, there would be a conflict. Docker would not be able to bind to port 5432 on the host because it's already in use. This conflict prevents the Docker container from starting up properly, which may lead to connection issues when trying to connect to the containerized PostgreSQL instance.
+
+By mapping a different port on the host machine to port 5432 in the Docker container (e.g., mapping port 5433 on the host to port 5432 in the container), you resolve the conflict. Now, Docker listens for connections on port 5433 on the host, and forwards them to port 5432 in the container, allowing your Node.js application to connect to the PostgreSQL server running inside the container without any conflicts.
