@@ -7,6 +7,6 @@ export default function () {
     }
 
     return (
-        <button onClick={handler} className="bg-red-500">Click</button>
+        <button onClick={handler}>Click</button>
     )
 }
