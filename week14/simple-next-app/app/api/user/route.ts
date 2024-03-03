@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
 
 // export function GET() {
 //     // db logic
@@ -20,11 +22,20 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     const body = await req.json()
+
+    const { username, password } = body
     console.log(body)
 
+    // save user to db
+    const response = await prisma.user.create({
+        data: {
+            username,
+            password
+        }
+    })
+
     return NextResponse.json({
-        message: 'post successfull',
-        username: body.username,
-        password: body.password
+        message: 'user created successfully',
+        response
     })
 }

@@ -10,15 +10,15 @@ export default function Signup() {
 
     return (
         <div>
-            <input type="text" placeholder="username" onChange={(e) => setUsername(e.target.value)} />
-            <input type="text" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+            Username: <input type="text" placeholder="username" onChange={(e) => setUsername(e.target.value)} /> <br />
+            Password: <input type="text" placeholder="password" onChange={(e) => setPassword(e.target.value)} /> <br />
             <button onClick={async () => {
                 const response = await axios.post('http://localhost:3000/api/user', {
                     username,
                     password
                 })
                 console.log(response.data)
-            }}>Sign In</button>
+            }}>Sign Up</button>
         </div>
     )
 }
