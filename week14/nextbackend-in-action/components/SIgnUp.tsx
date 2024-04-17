@@ -1,5 +1,6 @@
 "use client"
 
+import { signup } from "@/app/actions/user"
 import axios from "axios"
 import { useState } from "react"
 
@@ -21,11 +22,13 @@ export default function SignUp() {
                 <button
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit"
                     onClick={async () => {
-                        const resposne = await axios.post("http://localhost:3000/api/user", {
-                            email,
-                            password
-                        })
-                        console.log(resposne.data)
+                        // const resposne = await axios.post("http://localhost:3000/api/user", {
+                        //     email,
+                        //     password
+                        // })
+                        // console.log(resposne.data)
+                        const response = await signup(email, password)
+                        console.log(response)
                     }}
                 >Sign Up</button>
             </form>
