@@ -11,7 +11,7 @@ const app = (0, express_1.default)();
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    credentials: true,
+    credentials: true, // This is important for cookies to be saved in the browser
     origin: "http://localhost:5173"
 }));
 app.post('/signup', (req, res) => {
