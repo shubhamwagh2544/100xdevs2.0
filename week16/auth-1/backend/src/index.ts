@@ -2,10 +2,15 @@ import express from 'express';
 import { Request, Response } from 'express';
 import cookieparser from 'cookie-parser';
 import jwt, { JwtPayload } from 'jsonwebtoken'
+import cors from 'cors'
 const app = express()
 
 app.use(cookieparser())
 app.use(express.json())
+app.use(cors({
+    credentials: true,          // This is important for cookies to be saved in the browser
+    origin: "http://localhost:5173"
+}))
 
 app.post('/signup', (req: Request, res: Response) => {
     const username: string = req.body.username;
@@ -15,7 +20,7 @@ app.post('/signup', (req: Request, res: Response) => {
     }, "TEST_SECRET")
     res.cookie("token", token)
 
-    res.send("User signed up");
+    res.status(201).send("User signed up");
 });
 
 app.get('/me', (req: Request, res: Response) => {
