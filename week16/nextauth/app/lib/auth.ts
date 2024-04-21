@@ -1,4 +1,5 @@
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google"
 
 export const NEXT_AUTH = {
     providers: [
@@ -25,6 +26,10 @@ export const NEXT_AUTH = {
                 }
             },
         }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID as string,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
+        })
     ],
     secret: process.env.NEXTAUTH_SECRET as string,
     callbacks: {
