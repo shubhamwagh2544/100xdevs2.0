@@ -12,10 +12,26 @@ export default function () {
                 <button
                     onClick={() => {
                         //router.push('/api/auth/signin')
-                        signIn()
+                        signIn("google")
                     }}
                 >
-                    Sign In
+                    Sign In With Google
+                </button>
+                <button
+                    onClick={() => {
+                        //router.push('/api/auth/signin')
+                        signIn("github")
+                    }}
+                >
+                    Sign In With Github
+                </button>
+                <button
+                    onClick={() => {
+                        //router.push('/api/auth/signin')
+                        signIn("credentials")
+                    }}
+                >
+                    Sign In With Email
                 </button>
                 <button
                     onClick={() => {
