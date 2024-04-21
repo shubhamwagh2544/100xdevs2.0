@@ -1,5 +1,5 @@
+import { NEXT_AUTH } from "@/app/lib/auth";
 import NextAuth from "next-auth/next";
-import CredentialsProvider from "next-auth/providers/credentials";
 
 // export function GET(req: NextRequest, { params: { authRoutes } }: {
 //     params: {
@@ -12,34 +12,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 //     })
 // }
 
-const handler = NextAuth({
-    providers: [
-        CredentialsProvider({
-            name: 'credentials',
-            credentials: {
-                username: {
-                    label: 'username',
-                    type: 'text',
-                    placeholder: 'username'
-                },
-                password: {
-                    label: 'password',
-                    type: 'password',
-                    placeholder: 'password'
-                }
-            },
-            async authorize(credentials, req) {
-                // TODO: validation
-                return {
-                    id: '1',
-                    name: "Shubham Wagh",
-                    username: "shubhamwaghhere"
-                }
-            },
-        }),
-    ],
-    secret: process.env.NEXTAUTH_SECRET as string
-})
+const handler = NextAuth(NEXT_AUTH)
 
 export const GET = handler;
 export const POST = handler;
