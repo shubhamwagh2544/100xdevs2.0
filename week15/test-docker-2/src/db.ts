@@ -1,6 +1,6 @@
 import mongoose, { Schema, model } from 'mongoose';
 
-const mongoUrl: string = 'mongodb://localhost:27017/myDatabase';
+const mongoUrl: string = 'mongodb://mongo:27017/myDatabase'; // localhost is local machine network | mongo is container name who is running on the same network as the node app (backend_network)
 
 // Connect to MongoDB
 mongoose.connect(mongoUrl)
