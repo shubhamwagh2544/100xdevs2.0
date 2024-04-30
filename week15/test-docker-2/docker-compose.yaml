@@ -7,7 +7,8 @@ services:
     volumes:
       - mongodb_data:/data/db
   backend:
-    image: backend22
+    #image: backend22
+    build: .
     container_name: backend
     ports:
       - "3000:3000"
