@@ -18,6 +18,10 @@ function App() {
       console.log('received message: ', message.data)
       setLastWebSocketMessage(message.data)
     }
+
+    return () => {
+      websocket.close()
+    }
   }, [])
 
   if (!socket) {
