@@ -2,6 +2,10 @@ import request from 'supertest'
 import { describe, expect, it, vi } from 'vitest'
 import { app } from '..'
 
+import { prisma } from '../prisma'
+console.log(prisma.sum)     // isMockObject: true (mocks all keys of prisma object. eg. prisma.sum)
+
+/*
 // mock the prisma client invoke (prisma.sum.create => () => {})
 vi.mock('../prisma.ts', () => ({
     prisma: {
@@ -10,6 +14,10 @@ vi.mock('../prisma.ts', () => ({
         }
     }
 }))
+*/
+
+// deep mocking
+vi.mock('../prisma.ts')
 
 describe('Testing Zod POST Endpoint', () => {
     // positive scenario
