@@ -1,2 +1,2 @@
-# 100xdevs
+# 100xdevs2.0
 everything about web2 world lands here...
