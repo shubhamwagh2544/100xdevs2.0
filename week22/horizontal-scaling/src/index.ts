@@ -40,6 +40,20 @@ else {
       app.listen(port, () => {
         console.log(`App listening on port ${port}`);
       });
+
+      /*
+            To see 10 different processes have started,
+            use never-ending loop in this block
+            log the process.pid and see CPU usage via htop
+            
+            console.log(console.log(`Worker ${process.pid} started`));
+            let ctr = 0;
+            while(1) {
+                ctr++;
+            }
+
+            htop will show 10 CPUs utilised to ~100%
+      */
 }
 
 /*
