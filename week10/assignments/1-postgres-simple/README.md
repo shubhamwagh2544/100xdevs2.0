@@ -12,7 +12,7 @@ and put it in config.ts
 ## Assignment
 You are supposed to write the `database` part of an full stack app. 
 Specifically, you need to fill the functions in 
- - src/db/user.ts
+ - src/db/userroute.ts
  - src/db/todo.ts
 
 ## Testing

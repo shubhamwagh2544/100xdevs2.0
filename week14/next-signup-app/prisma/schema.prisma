@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Userroute {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   username  String   @unique
   firstname String?
@@ -17,7 +17,7 @@ model User {
 }
 
 model Account {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String @unique @db.ObjectId
-  user   User   @relation(fields: [userId], references: [id])
+  id     String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId String    @unique @db.ObjectId
+  user   Userroute @relation(fields: [userId], references: [id])
 }

@@ -10,9 +10,9 @@ datasource db {
   url      = "postgres://postgres:mysecretpassword@localhost/postgres"
 }
 
-model User {
-  id       Int      @id @default(autoincrement())
-  username String   @unique
+model Userroute {
+  id       Int    @id @default(autoincrement())
+  username String @unique
   password String
   name     String
 }

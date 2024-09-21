@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "User" (
+CREATE TABLE "Userroute" (
     "id" SERIAL NOT NULL,
     "email" TEXT NOT NULL,
     "firstname" TEXT,
@@ -21,4 +21,4 @@ CREATE TABLE "Todo" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+CREATE UNIQUE INDEX "User_email_key" ON "Userroute"("email");

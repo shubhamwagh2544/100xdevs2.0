@@ -3,12 +3,12 @@
 The goal is to build the backend of a `Blogging Platform`. 
 It NEEDS to work in a serverless environment (preferably use cloudflare workers)
 
-### User Management Endpoints:
- - POST /users/signup - User registration.
+### Userroute Management Endpoints:
+ - POST /users/signup - Userroute registration.
 Inputs: username, email, password
 Actions: Create a new user account. Perform validations and return a success message or error messages (e.g., email already in use, password requirements not met).
 
- - POST /users/signin - User login.
+ - POST /users/signin - Userroute login.
 Inputs: email, password
 Actions: Authenticate the user. Return a token (JWT) for authorization in subsequent requests if successful, or an error message if authentication fails.
 Blog Platform Endpoints:

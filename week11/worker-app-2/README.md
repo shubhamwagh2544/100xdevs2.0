@@ -2,12 +2,12 @@
 ## Advance Blogging app
 Same as the first assignment, but you need to support `tags` for every blog post as well
 
-### User Management Endpoints:
- - POST /users/signup - User registration.
+### Userroute Management Endpoints:
+ - POST /users/signup - Userroute registration.
 Inputs: username, email, password
 Actions: Create a new user account. Perform validations and return a success message or error messages (e.g., email already in use, password requirements not met).
 
- - POST /users/signin - User login.
+ - POST /users/signin - Userroute login.
 Inputs: email, password
 Actions: Authenticate the user. Return a token (JWT) for authorization in subsequent requests if successful, or an error message if authentication fails.
 Blog Platform Endpoints:
@@ -33,4 +33,4 @@ Actions: Delete the specified blog post if the authenticated user is the owner. 
 Try using `prisma` as the ORM and Postgres as the provider. You will have to use `relationships` between the `tags` and the `blogs` table. 
 
 ## Assumption
-You can assume that you only support 10 tags that the user can choose from. User doesn't need to have the ability to add more tags (even better if you implement that)
+You can assume that you only support 10 tags that the user can choose from. Userroute doesn't need to have the ability to add more tags (even better if you implement that)

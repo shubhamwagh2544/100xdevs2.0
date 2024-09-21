@@ -28,12 +28,12 @@ You need to use mongodb to store all the data persistently.
   Input: Headers: { 'Authorization': 'Bearer <your-token>' }
   Output: { courses: [ { id: 1, title: 'course title', description: 'course description', price: 100, imageLink: 'https://linktoimage.com', published: true }, ... ] }
 
-### User routes
+### Userroute routes
 
 - POST /users/signup
   Description: Creates a new user account.
   Input: { username: 'user', password: 'pass' }
-  Output: { message: 'User created successfully' }
+  Output: { message: 'Userroute created successfully' }
 - POST /users/signin
   Description: Logs in a user account.
   Input: { username: 'user', password: 'pass' }
