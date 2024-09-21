@@ -35,7 +35,7 @@ function App() {
       <input type="text" onChange={(e) => {
         setInputMessage(e.target.value)
       }} />
-      <button onClick={(e) => {
+      <button onClick={() => {
         socket.send(inputMessage)
       }}>Send Message</button>
 
